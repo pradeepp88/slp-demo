@@ -39,9 +39,8 @@ const bchAmount = 2;
     //Calculating total SLP tokens of winners
     const slpTotal = Array.from(addressList.values()).reduce((a, c) => a.plus(c), new Big(0));
 
-    
-    console.log(`Dividing ${bchAmount} BCH among winners`);
     //Dividing amount among winners according to their token balance
+    console.log(`Dividing ${bchAmount} BCH among winners according to their token balance`);
     addressList.forEach((v, k) => {
         const d = v.div(slpTotal).mul(bchAmount);
         if (d.gt(0.00000000)) {
