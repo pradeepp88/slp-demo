@@ -40,7 +40,7 @@ const blockCutoff = 1444435;
     const bchAmount = 2;
     console.log(`Dividing ${bchAmount} BCH among winners`);
 
-    //Dividing amount among winners 
+    //Dividing amount among winners according to their token balance
     addressList.forEach((v, k) => {
         const d = v.div(slpTotal).mul(bchAmount);
         if (d.gt(0.00000000)) {
