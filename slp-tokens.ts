@@ -9,7 +9,7 @@ const tokenID = "434f4002f7c657f75bcff120f1a88dda9efc1bc4c5703e08b9931c941536bf6
 //Cutoff Block
 const blockCutoff = 1444435;
 
-//Enter Divident Amount here
+//Enter Dividend Amount here
 const bchAmount = 2;
 
 (async () => {

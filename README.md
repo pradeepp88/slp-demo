@@ -11,7 +11,7 @@ const tokenID = "";
 //Cutoff Block
 const blockCutoff = ;
 
-//Enter Divident Amount here
+//Enter Dividend Amount here
 const bchAmount = ;
 ```
 
