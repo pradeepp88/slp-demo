@@ -9,6 +9,9 @@ const tokenID = "434f4002f7c657f75bcff120f1a88dda9efc1bc4c5703e08b9931c941536bf6
 //Cutoff Block
 const blockCutoff = 1444435;
 
+//Enter Divident Amount here
+const bchAmount = 2;
+
 (async () => {
     //Fetch address list of all token holders
     const addressList = await slplist.List.GetAddressListFor(tokenID, blockCutoff)as Map<string, Big>;
@@ -36,10 +39,8 @@ const blockCutoff = 1444435;
     //Calculating total SLP tokens of winners
     const slpTotal = Array.from(addressList.values()).reduce((a, c) => a.plus(c), new Big(0));
 
-    //Enter Divident Amount here
-    const bchAmount = 2;
+    
     console.log(`Dividing ${bchAmount} BCH among winners`);
-
     //Dividing amount among winners according to their token balance
     addressList.forEach((v, k) => {
         const d = v.div(slpTotal).mul(bchAmount);
