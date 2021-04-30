@@ -9,6 +9,7 @@
   "author": "Pradeep",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^15.0.1",
     "bchaddrjs-slp": "^0.2.14",
     "big.js": "^6.1.0",
     "slp-list": "^1.1.0",
