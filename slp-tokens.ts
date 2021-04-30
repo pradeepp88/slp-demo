@@ -4,24 +4,23 @@ slplist.Config.SetUrl("https://slpdb-testnet.fountainhead.cash");
 const bchaddr = require("bchaddrjs-slp");
 
 //Token ID
-const tokenID = "434f4002f7c657f75bcff120f1a88dda9efc1bc4c5703e08b9931c941536bf6f";
+const tokenID = "9dfb1c9090fe9a802bf2dea4940d7cfa6b1124485ffa865c2edc157437927181";
 
 //Cutoff Block
-const blockCutoff = 1444435;
+const blockCutoff = 1445452;
 
 //Enter Dividend Amount here
-const bchAmount = 2;
+const bchAmount = 0.5;
 
 (async () => {
     //Fetch address list of all token holders
-    const addressList = await slplist.List.GetAddressListFor(tokenID, blockCutoff)as Map<string, Big>;
+    const addressList = await slplist.List.GetAddressListFor(tokenID, blockCutoff)as Map<string, typeof Big>;
 
-    //Address of Winners
+    //Address of Winners - enter only bchaddress
     const addressWinners = [
-    'bchtest:qpveurnsq5ylmj4js073nmr8zvz66jks05qprtdwkd',
-    'bchtest:qrhs9z8pqlqkqhu8kt5k5s7exlrnpymc9gcq076md8',
-    'bchtest:qr5dp63fvfu8zyyaz7xuvzlyf3jfftq08vz6knauxh',
-    'bchtest:qz5r3zy30ze67n4cs9wplr5punch85kufq2a5dlvzz'
+    'bchtest:qrfs9hlq5rpy0d56j90w9u2em5z7rcmqvgx04ju3f0',
+    'bchtest:qzrw6p7vm69f6q92uhastp5ukn6jnlcl8ghvhrx50c',
+    'bchtest:qq5cwz245ghgd3nsg5pz42ae0lq7p8x3rqwl5078un'
     ];
 
     console.log("Winners List:",addressWinners);
@@ -38,9 +37,13 @@ const bchAmount = 2;
 
     //Calculating total SLP tokens of winners
     const slpTotal = Array.from(addressList.values()).reduce((a, c) => a.plus(c), new Big(0));
+    //console.log("Total tokens",slpTotal);
+
 
     //Dividing amount among winners according to their token balance
     console.log(`Dividing ${bchAmount} BCH among winners according to their token balance`);
+    //console.log(addressList);
+
     addressList.forEach((v, k) => {
         const d = v.div(slpTotal).mul(bchAmount);
         if (d.gt(0.00000000)) {

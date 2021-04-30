@@ -13,6 +13,11 @@ const blockCutoff = ;
 
 //Enter Dividend Amount here
 const bchAmount = ;
+
+//Address of Winners - enter only bchaddress as shown below
+const addressWinners = [
+'bchtest:qrfs9hlq5rpy0d56j90w9u2em5z7rcmqvgx04ju3f0',
+];
 ```
 
 To start:<br>
