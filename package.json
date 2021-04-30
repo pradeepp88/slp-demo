@@ -4,8 +4,7 @@
   "description": "typescript code to run dividend",
   "main": "slp-tokens.ts",
   "scripts": {
-    "start": "ts-node slp-tokens.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node slp-tokens.ts"
   },
   "author": "Pradeep",
   "license": "MIT",
