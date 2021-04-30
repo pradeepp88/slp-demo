@@ -1,0 +1,19 @@
+{
+  "name": "slp-demo",
+  "version": "1.0.0",
+  "description": "typescript code to run dividend",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node slp-tokens.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pradeep",
+  "license": "MIT",
+  "dependencies": {
+    "bchaddrjs-slp": "^0.2.14",
+    "big.js": "^6.1.0",
+    "slp-list": "^1.1.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
